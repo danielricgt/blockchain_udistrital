@@ -1,0 +1,23 @@
+{
+  "name": "blockchain_udistrital",
+  "version": "1.0.0",
+  "description": "Api blockchain",
+  "main": "app.js",
+  "scripts": {
+    "test": "Api blockchain"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielricgt/blockchain_udistrital.git"
+  },
+  "keywords": [
+    "Api",
+    "Blockchain"
+  ],
+  "author": "Jorge Ivan Reyes Valencia <jorgeivanreyesvalencia92@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielricgt/blockchain_udistrital/issues"
+  },
+  "homepage": "https://github.com/danielricgt/blockchain_udistrital#readme"
+}
