@@ -33,6 +33,10 @@ async function getHashBien(contract) {
   return hash;
 }
 
+async function createHashBien(contract){
+  //en este metodo trabajamos en eth.send()
+}
+
 // async function ejecutor() {
 //   let balance = await getBalance("0x295526F1661b55D5981f23CA7Aac936714BBEeaf");
 //   console.log("balance", balance);
