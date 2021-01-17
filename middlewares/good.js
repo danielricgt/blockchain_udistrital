@@ -14,12 +14,10 @@ async function validateData(req, res, next) {
 }
 
 async function createGood(req,res){
-  let contract = await blockchain.smartContract()
-  let hash = await blockchain.getHashBien(contract)
-  console.log(hash);
- // let result =  await goodController.createGood(req.objects.good);
- //res.json(result);
- res.json({s: "ssdsd"});
+  let bien =  req.objects.good
+  let contract = await blockchain.smartContract();
+  let  createHash = await blockchain.createHashBien(bien.uid) 
+  res.json({s: "ssdsd"});
 }
 
 async function getHashGood(req,res){
