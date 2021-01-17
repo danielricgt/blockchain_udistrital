@@ -3,5 +3,5 @@
 
 | Methods  	| Endpoint | Parameters |
 |-	|-	|-	|
-| Obtener Bien | api/blockchain/bienes  	|{} |
-| Crear Bien |  	|  	|
+| Obtener Bien | api/blockchain/bienes |{} |
+| Crear Bien | api/blockchain/bien|  	|
