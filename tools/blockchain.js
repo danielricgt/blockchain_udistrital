@@ -21,7 +21,7 @@ async function balanceUnit(balance, unit) {
   }
 }
 
-async function smartContract(abi,h) {
+async function smartContract() {
   const abi = abiSmartContrac;
   const contract = new web3.eth.Contract(abi, "0x1276980a2b61ea608e23e3D5B4438bA05570aa15");
   return contract;
