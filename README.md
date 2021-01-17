@@ -1,2 +1,2 @@
 # Blockchain Udistrital Api
-## Method
+## Methods
