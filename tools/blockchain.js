@@ -23,7 +23,7 @@ async function balanceUnit(balance, unit) {
 
 async function smartContract() {
   const abi = abiSmartContrac;
-  const contract = new web3.eth.Contract(abi, "0x1276980a2b61ea608e23e3D5B4438bA05570aa15");
+  const contract = new web3.eth.Contract(abi, "0xdEa71833dEF4093F3c5418254CEEc74762021461");
   return contract;
 }
 
@@ -34,7 +34,11 @@ async function getHashBien(contract) {
 }
 
 async function createHashBien(contract){
-  //en este metodo trabajamos en eth.send()
+  //console.log(contract.methods);
+  contract.methods.generateHashVal("Hello","2","2","2","2","2","2","2").send({from:"0xBB67Fc057F46a02BeA200a81A1AcE8365C1f2C1D"}, function(){
+    myContract.methods.getHash().call((error, result) => {console.log(result)})
+  })
+
 }
 
 
