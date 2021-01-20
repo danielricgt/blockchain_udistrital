@@ -1,6 +1,7 @@
 const Web3 = require("web3");
 const web3 = new Web3(new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545"));
 const abiSmartContrac = require("../truffle/build/contracts/Bienes.json");
+const abiSmartContracP = require("../truffle/build/contracts/procesos_hash.json");
 
 async function getBalance(address) {
   try {
@@ -21,10 +22,19 @@ async function balanceUnit(balance, unit) {
   }
 }
 
-async function smartContract() {
-  const abi = abiSmartContrac;
-  const contract = new web3.eth.Contract(abi, "0xdEa71833dEF4093F3c5418254CEEc74762021461");
-  return contract;
+async function smartContract(contract) {
+  let smartcontract 
+  switch (contract) {
+    case "GOOD":
+      const abi = abiSmartContrac;
+      smartcontract = new web3.eth.Contract(abi, "0xdEa71833dEF4093F3c5418254CEEc74762021461");
+      break;
+    case "PROCESS":
+      const abip = abiSmartContracP;
+      smartcontract = new web3.eth.Contract(abi, "0xdEa71833dEF4093F3c5418254CEEc74762021461");
+      break;
+  }
+  return smartcontract;
 }
 
 async function getHashBien(contract) {
