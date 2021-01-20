@@ -34,9 +34,8 @@ async function getHashBien(contract) {
 }
 
 async function createHashBien(contract,id,descripcion,placa,sede,inventory,space,marcaserie,state){
-  console.log(contract.methods);
   try {
-    await contract.methods.generateHashVal(id,descripcion,placa,sede,inventory,space,marcaserie,state).send({from:"0xBB67Fc057F46a02BeA200a81A1AcE8365C1f2C1D"})
+    let getData = await contract.methods.generateHashVal(id,descripcion,placa,sede,inventory,space,marcaserie,state).send({from:"0xBB67Fc057F46a02BeA200a81A1AcE8365C1f2C1D"})
     return await getHashBien(contract)
   
   } catch (error) {
