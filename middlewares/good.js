@@ -13,11 +13,10 @@ async function validateData(req, res, next) {
   next();
 }
 
-async function createGood(req,res){
-  let bien =  req.objects.good
+async function createHashGood(req,res){
   let contract = await blockchain.smartContract();
-  let  createHash = await blockchain.createHashBien(bien.uid) 
-  res.json({s: "ssdsd"});
+  let  createHash = await blockchain.createHashBien(contract) 
+  res.json({createHash: `${createHash}` });
 }
 
 async function getHashGood(req,res){
@@ -29,6 +28,6 @@ async function getHashGood(req,res){
 
 module.exports = {
   validateData,
-  createGood,
+  createHashGood,
   getHashGood,
 };
