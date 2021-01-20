@@ -16,7 +16,8 @@ async function validateData(req, res, next) {
 async function createHashGood(req,res){
   let contract = await blockchain.smartContract();
   let  createHash = await blockchain.createHashBien(contract) 
-  res.json({createHash: `${createHash}` });
+  console.log("response" , createHash);
+  res.json({create: `${createHash}` });
 }
 
 async function getHashGood(req,res){

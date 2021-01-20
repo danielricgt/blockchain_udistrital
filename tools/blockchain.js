@@ -37,7 +37,8 @@ async function createHashBien(contract){
   console.log(contract.methods);
   const getData = await contract.methods.generateHashVal("camilo","2","2","4","2","2","2","2").send({from:"0xBB67Fc057F46a02BeA200a81A1AcE8365C1f2C1D"}, function (){
     contract.methods.getHash().call((error, result) => {console.log(result)})
-  
+    console.log(getData);
+    return getData;
   })
 }
 
