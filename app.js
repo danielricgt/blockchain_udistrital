@@ -9,12 +9,13 @@ app.use(cors())
 var port = process.env.PORT || 4000;
 
 var bienesRouter = require('./routes/bienes');
-var pocesosRouter = require('./routes/bienes');
+var procesosRouter = require('./routes/procesos');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/api', bienesRouter);
+app.use('/api', procesosRouter);
 
 app.get('/',(req,res) => {
     res.json({ message: "Api Auth" })

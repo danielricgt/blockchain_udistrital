@@ -31,7 +31,7 @@ async function smartContract(contract) {
       break;
     case "PROCESS":
       const abip = abiSmartContracP;
-      smartcontract = new web3.eth.Contract(abi, "0xdEa71833dEF4093F3c5418254CEEc74762021461");
+      smartcontract = new web3.eth.Contract(abip, "0x8A5fa9313D3B99Ab2c3097a2e2E0CB93CfFE41Fa");
       break;
   }
   return smartcontract;
@@ -53,11 +53,16 @@ async function createHashBien(contract,id,descripcion,placa,sede,inventory,space
   }
 }
 
-
+async function getHashProcesos(contract) {
+  console.log(contract.methods);
+  const hash = await contract.methods.getHash().call();
+  return hash;
+}
 
 
 module.exports = {
     smartContract,
     getHashBien,
-    createHashBien
+    createHashBien,
+    getHashProcesos
 };
