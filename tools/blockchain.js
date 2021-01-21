@@ -59,10 +59,21 @@ async function getHashProcesos(contract) {
   return hash;
 }
 
+async function createHashProceso(contract,id,start_date,end_date,description,reason,hashb,fk_person,fk_good, hash_ipfs){
+  try {
+    let getData = await contract.methods.generateHashVal(id,start_date,end_date,description,reason,hashb,fk_person,fk_good, hash_ipfs).send({from:"0xBB67Fc057F46a02BeA200a81A1AcE8365C1f2C1D"})
+    return await getHashProcesos(contract)
+  
+  } catch (error) {
+    console.error;
+  }
+}
+
 
 module.exports = {
     smartContract,
     getHashBien,
     createHashBien,
-    getHashProcesos
+    getHashProcesos,
+    createHashProceso
 };

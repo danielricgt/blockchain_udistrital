@@ -17,16 +17,17 @@ async function createHashProcess(req, res) {
   let process = req.objects.process;
   console.log("data  enviada: ", process);
   let contract = await blockchain.smartContract("PROCESS");
-  let hash = await blockchain.createHashProcess(
+  let hash = await blockchain.createHashProceso(
     contract,
     process.id,
-    process.descripcion,
-    process.placa,
-    process.sede,
-    process.inventory,
-    process.space,
-    process.marcaserie,
-    process.state
+    process.start_date,
+    process.end_date,
+    process.description,
+    process.reason,
+    process.hashb,
+    process.fk_person,
+    process.fk_good,
+    process.hash_ipfs
   );
   console.log("response", hash);
   res.json({ create: `${hash}` });
